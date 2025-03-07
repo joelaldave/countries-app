@@ -6,30 +6,16 @@
 
 <section class="stats shadow">
     <div class="stat">
-      <div class="stat-figure text-primary">
-
-        
-        <app-favorite-button [isFavorite]="isFavorite()" (toggleFavorite)="onClick()"/>
-      </div>
+      
       <div class="stat-title">Población</div>
       <div class="stat-value text-primary">{{ country().population | number }}</div>
-      <div class="stat-desc">Hasta </div>
     </div>
   
     <div class="stat">
-      <div class="stat-figure text-secondary">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block h-8 w-8 stroke-current">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-      </div>
+        <div class="stat-figure text-primary">
+          <app-favorite-button [isFavorite]="isFavorite()" (toggleFavorite)="onClick()"/>
+        </div>
+      
       <div class="stat-title">Pais</div>
       <div class="stat-value text-secondary">{{ country().name }}</div>
       <div class="stat-desc">{{ country().region}}</div>
