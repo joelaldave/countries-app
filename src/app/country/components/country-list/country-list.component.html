@@ -9,6 +9,8 @@
                 <th>Capital</th>
                 <th>Población</th>
                 <th></th>
+                <th></th>
+
             </tr>
         </thead>
         <tbody>
@@ -25,6 +27,9 @@
                         <span class="badge badge-secondary">
                             {{ country.population | number }}
                         </span>
+                    </td>
+                    <td>
+                        <app-favorite-button [isFavorite]="favoriteService.isFavorite(country)" (toggleFavorite)="toggleFavorite.emit(country)"/>
                     </td>
                     <td>
                         <a 

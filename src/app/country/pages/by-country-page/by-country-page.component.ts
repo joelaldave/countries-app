@@ -5,6 +5,7 @@ import { CountryService } from '../../services/country.service';
 import { firstValueFrom, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FavoriteService } from '../../services/favorite.service';
 
 @Component({
   selector: 'app-by-country-page',
@@ -17,6 +18,8 @@ export class ByCountryPageComponent {
 
   countryService = inject(CountryService);
 
+  favoriteService = inject(FavoriteService);
+  
   activeRoute = inject(ActivatedRoute);
 
   router = inject(Router)

@@ -5,6 +5,7 @@ import { CountryService } from '../../services/country.service';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FavoriteService } from '../../services/favorite.service';
 
 function validateQUeryParams(queryParams: string):Region {
 
@@ -43,6 +44,7 @@ export class ByRegionPageComponent {
 
   countryService = inject(CountryService);
 
+  favoriteService = inject(FavoriteService);
 
   activeRoute = inject(ActivatedRoute);
 

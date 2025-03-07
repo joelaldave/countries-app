@@ -6,6 +6,7 @@ import { Country } from '../../interfaces/country.interface';
 import { firstValueFrom, of } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FavoriteService } from '../../services/favorite.service';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -17,6 +18,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ByCapitalPageComponent {
 
   countryService = inject(CountryService);
+
+  favoriteService = inject(FavoriteService);
 
   activatedRoute = inject(ActivatedRoute);
 
@@ -41,6 +44,10 @@ export class ByCapitalPageComponent {
       
     }
   })
+
+  toggleFavorite( country : Country){
+    this.favoriteService.toggleFavorite(country);
+  }
 
   // countryResource = resource({
   //   request: () =>({ query : this.query() }),  
